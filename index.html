@@ -1,43 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Expenses chart component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'soft-red': 'hsl(10, 79%, 65%)',
+            'cyan': 'hsl(186, 34%, 65%)',
+            'dark-brown': 'hsl(25, 47%, 15%)',
+            'medium-brown': 'hsl(28, 10%, 53%)',
+            'cream': 'hsl(26, 66%, 93%)',
+          },
+          fontFamily: {
+            'dm-sans': ['DM Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
-<body>
 
-  My balance
-  $921.48
+<body class="bg-cream font-dm-sans min-h-screen flex items-center justify-center p-4">
+  <div class="w-full max-w-lg">
+    <!-- Balance Card -->
+    <div class="bg-soft-red rounded-xl p-6 mb-4 flex justify-between items-center">
+      <div>
+        <p class="text-white text-sm mb-2">My balance</p>
+        <p class="text-white text-3xl font-bold">$921.48</p>
+      </div>
+      <img src="./images/logo.svg" alt="logo" class="w-16 h-10">
+    </div>
 
-  Spending - Last 7 days
+    <!-- Chart Card -->
+    <div class="bg-white rounded-xl p-6">
+      <h2 class="text-dark-brown text-2xl font-bold mb-12">Spending - Last 7 days</h2>
 
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
+      <!-- Bar Chart -->
+      <div class="flex justify-between items-end h-40 mb-8 gap-2">
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-full bg-soft-red rounded hover:opacity-70 cursor-pointer transition-opacity"
+            style="height: 60%"></div>
+          <p class="text-medium-brown text-xs mt-2">mon</p>
+        </div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-full bg-soft-red rounded hover:opacity-70 cursor-pointer transition-opacity"
+            style="height: 75%"></div>
+          <p class="text-medium-brown text-xs mt-2">tue</p>
+        </div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-full bg-cyan rounded hover:opacity-70 cursor-pointer transition-opacity" style="height: 100%">
+          </div>
+          <p class="text-medium-brown text-xs mt-2">wed</p>
+        </div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-full bg-soft-red rounded hover:opacity-70 cursor-pointer transition-opacity"
+            style="height: 65%"></div>
+          <p class="text-medium-brown text-xs mt-2">thu</p>
+        </div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-full bg-soft-red rounded hover:opacity-70 cursor-pointer transition-opacity"
+            style="height: 70%"></div>
+          <p class="text-medium-brown text-xs mt-2">fri</p>
+        </div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-full bg-soft-red rounded hover:opacity-70 cursor-pointer transition-opacity"
+            style="height: 85%"></div>
+          <p class="text-medium-brown text-xs mt-2">sat</p>
+        </div>
+        <div class="flex flex-col items-center flex-1">
+          <div class="w-full bg-soft-red rounded hover:opacity-70 cursor-pointer transition-opacity"
+            style="height: 68%"></div>
+          <p class="text-medium-brown text-xs mt-2">sun</p>
+        </div>
+      </div>
 
-  Total this month
-  $478.33
+      <hr class="border-cream border-2 mb-6">
 
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+      <!-- Total Section -->
+      <div class="flex justify-between items-end">
+        <div>
+          <p class="text-medium-brown text-sm mb-1">Total this month</p>
+          <p class="text-dark-brown text-4xl font-bold">$478.33</p>
+        </div>
+        <div class="text-right">
+          <p class="text-dark-brown font-bold text-sm">+2.4%</p>
+          <p class="text-medium-brown text-sm">from last month</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attribution -->
+    <div class="attribution mt-4">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Max Mendes</a>.
+    </div>
   </div>
 </body>
+
 </html>
