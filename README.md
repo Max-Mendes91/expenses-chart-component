@@ -1,97 +1,212 @@
-# Frontend Mentor - Expenses chart component
+# Expenses Chart Component
 
-![Design preview for the Expenses chart component coding challenge](preview.jpg)
+A responsive, interactive expenses chart component that displays weekly spending data with dynamic bar visualization and hover tooltips.
 
-## Welcome! 👋
+![Challenge Preview](design/desktop-design.jpg)
 
-Thanks for checking out this front-end coding challenge.
+## 🚀 Demo
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+View the live demo: [Add your live site URL here]
 
-**To do this challenge, you need a decent understanding of HTML, CSS and JavaScript.**
+## 📋 Table of Contents
 
-## The challenge
+- [Overview](#overview)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [File Structure](#file-structure)
+- [How It Works](#how-it-works)
+- [What I Learned](#what-i-learned)
+- [Acknowledgments](#acknowledgments)
 
-Your challenge is to build out this bar chart component and get it looking as close to the design as possible.
+## 🎯 Overview
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+This project is a solution to the [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt). The challenge focuses on building a dynamic chart component that fetches data and displays it with interactive visualizations.
 
-We provide the data for the chart in a local `data.json` file. So you can use that to dynamically add the bars if you choose.
+### The Challenge
 
-Your users should be able to:
+Users should be able to:
 
-- View the bar chart and hover over the individual bars to see the correct amounts for each day
-- See the current day's bar highlighted in a different colour to the other bars
+- View the bar chart and hover over individual bars to see detailed amounts
+- See the current day's bar highlighted in a different color
 - View the optimal layout for the content depending on their device's screen size
-- See hover states for all interactive elements on the page
-- **Bonus**: See dynamically generated bars based on the data provided in the local JSON file
+- See hover states for all interactive elements
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+## ✨ Features
 
-## Where to find everything
+- **Dynamic Data Loading**: Fetches spending data from JSON file with error handling
+- **Interactive Tooltips**: Custom-styled tooltips appear on hover showing exact amounts
+- **Current Day Highlight**: Automatically detects and highlights today's bar in cyan
+- **Responsive Design**: Adapts seamlessly to different screen sizes
+- **Smooth Animations**: Opacity transitions on hover for better UX
+- **Proportional Bar Scaling**: Bars scale relative to the highest spending amount
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## 📸 Screenshots
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Desktop View
+![Desktop View](design/desktop-design.jpg)
 
-If you would like the Figma design file to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### Mobile View
+![Mobile View](./screenshots/mobile.png)
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+## 🛠️ Technologies Used
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- **HTML5**: Semantic markup
+- **CSS3**: Styling via Tailwind CSS
+- **JavaScript (ES6+)**: 
+  - Async/await for data fetching
+  - DOM manipulation
+  - Event listeners
+  - Array methods (map, forEach)
+- **Tailwind CSS (CDN)**: Utility-first styling with custom color configuration
+- **Google Fonts**: DM Sans font family
 
-## Building your project
+## 🚦 Getting Started
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### Prerequisites
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- A modern web browser
+- A local server (recommended: VS Code Live Server extension)
 
-## Deploying your project
+### Installation
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/expenses-chart-component.git
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+2. Navigate to the project directory:
+```bash
+cd expenses-chart-component
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+3. Open with a local server:
+   - **VS Code**: Right-click `index.html` → "Open with Live Server"
+   - **Python**: `python -m http.server 8000`
+   - **Node.js**: `npx serve`
 
-## Create a custom `README.md`
+4. Open your browser and navigate to `http://localhost:5500` (or your server's URL)
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+> **Note**: Opening the HTML file directly (`file://`) won't work due to CORS restrictions on fetching `data.json`
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+## 📁 File Structure
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+```
+expenses-chart-component/
+│
+├── index.html          # Main HTML structure
+├── script.js           # JavaScript logic and chart rendering
+├── data.json          # Spending data (7 days)
+├── README.md          # Project documentation
+│
+├── images/
+│   ├── favicon-32x32.png
+│   └── logo.svg
+│
+└── design/            # Design reference files (optional)
+    ├── desktop-design.jpg
+    └── mobile-design.jpg
+```
 
-## Submitting your solution
+## ⚙️ How It Works
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+### Data Flow
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+```
+Page Load → Fetch data.json → Process data → Calculate max amount → Render bars → Attach event listeners
+```
 
-## Sharing your solution
+### Key Functions
 
-There are multiple places you can share your solution:
+**`getData()`**
+- Fetches spending data from `data.json`
+- Handles errors with fallback data
+- Returns promise with data array
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+**`getMaxAmount(data)`**
+- Finds the highest spending amount
+- Used for proportional bar scaling
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+**`createBar(dayData, maxAmount, isCurrent)`**
+- Creates individual bar elements
+- Applies colors based on current day
+- Attaches hover event listeners
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+**`renderChart()`**
+- Clears existing chart
+- Loops through data to create all bars
+- Main rendering function
 
-## Got feedback for us?
+**`showTooltip()` / `hideTooltip()`**
+- Displays/hides custom tooltip on hover
+- Positions tooltip above active bar
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi@frontendmentor.io.
+### Data Format
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+`data.json` structure:
+```json
+[
+  { "day": "mon", "amount": 17.45 },
+  { "day": "tue", "amount": 34.91 },
+  ...
+]
+```
 
-**Have fun building!** 🚀
+## 📚 What I Learned
+
+### Technical Skills
+
+- **Async JavaScript**: Proper use of async/await for data fetching
+- **DOM Manipulation**: Creating elements dynamically with JavaScript
+- **Event Handling**: Adding interactive hover effects and tooltips
+- **CSS Positioning**: Absolute positioning for tooltip placement
+- **Array Methods**: Using `.map()`, `.forEach()`, and `Math.max()` effectively
+
+### Problem-Solving
+
+- **Tailwind CDN Limitations**: Learned that dynamically created elements need inline styles when using Tailwind CDN
+- **Percentage vs Pixels**: Understood why percentage heights require explicit parent heights
+- **Memory Management**: Discovered potential memory leaks with event listeners on re-rendered elements
+
+### Code Snippets I'm Proud Of
+
+**Dynamic bar height calculation:**
+```javascript
+const containerHeight = 160;
+const calcHeight = (dayData.amount / maxAmount) * containerHeight;
+barDiv.style.height = `${calcHeight}px`;
+```
+
+**Current day detection:**
+```javascript
+const days = new Date().getDay();
+const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+const currentDay = weekdays[days];
+```
+
+## 🎨 Design Specifications
+
+### Colors
+
+- **Soft Red**: `hsl(10, 79%, 65%)`
+- **Cyan**: `hsl(186, 34%, 65%)`
+- **Dark Brown**: `hsl(25, 47%, 15%)`
+- **Medium Brown**: `hsl(28, 10%, 53%)`
+- **Cream**: `hsl(27, 66%, 92%)`
+- **Very Pale Orange**: `hsl(33, 100%, 98%)`
+
+### Typography
+
+- **Font Family**: DM Sans
+- **Weights**: 400 (Regular), 700 (Bold)
+
+## 🤝 Acknowledgments
+
+- Challenge by [Frontend Mentor](https://www.frontendmentor.io)
+- Coded by [Max Mendes](https://github.com/Max-Mendes91)
+- Special thanks to Claude AI for guidance and code review
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
