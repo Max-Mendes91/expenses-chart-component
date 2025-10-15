@@ -1,7 +1,6 @@
 
-// TODO 1: Create a data.json array here (or fetch from external file)
-// Format: [{"day": "mon", "amount": 17.45 }, ...]
-const chartData = [];
+// TODO 1: Create a data.json array here .
+let chartData = [];
 
 const getData = async (params) => {
     const response = await fetch('data.json');
@@ -17,8 +16,11 @@ getData().then(data => {
 
 
 // TODO 2: Get the current day of the week (lowercase: mon, tue, wed, etc.)
-// Hint: Use new Date().getDay() and convert to day name
 const currentDay = '';
+const days = new Date();
+// console.log(days.getDay());
+const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+
 
 // TODO 3: Select the bar chart container
 const chartContainer = null;
