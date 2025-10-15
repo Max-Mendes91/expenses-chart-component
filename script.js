@@ -7,32 +7,37 @@ const getData = async (params) => {
     const data = await response.json();
     console.log(data)
     return data;
-    
+
 }
 getData().then(data => {
     chartData = data;
 });
 
-
-
 // TODO 2: Get the current day of the week (lowercase: mon, tue, wed, etc.)
 const currentDay = '';
-const days = new Date();
-// console.log(days.getDay());
+const days = new Date().getDay();
 const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+weekdays[days];
+console.log(weekdays[days]);
 
 
 // TODO 3: Select the bar chart container
 const chartContainer = null;
+const chartCard = document.querySelector('#chart-card')
 
 // TODO 4: Create a function to find the maximum amount for scaling bars
 function getMaxAmount(data) {
-    // Your code here
+    const amounts = data.map(item => item.amount);
+    return Math.max(...amounts);
+    
 }
+getMaxAmount(chartData);
+ 
 
 // TODO 5: Create a function to generate a single bar element
 function createBar(dayData, maxAmount, isCurrent) {
     // Create div for bar column
+    const barColumn = document.querySelector('#chart-container')
     // Calculate height percentage based on maxAmount
     // Add appropriate classes (cyan for current day, soft-red for others)
     // Add tooltip/hover with amount
