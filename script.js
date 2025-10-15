@@ -1,4 +1,4 @@
-// TODO 1: Create a data.json array here .
+//Create a data.json array 
 let chartData = [];
 const chartContainer = document.getElementById('chart-container')
 
@@ -121,7 +121,7 @@ function createBar(dayData, maxAmount, isCurrent) {
     const dayLabel = document.createElement('p');
     dayLabel.textContent = dayData.day;
     dayLabel.className = 'text-xs mt-2';
-    dayLabel.style.color = 'hsl(28, 10%, 53%)'; // medium-brown
+    dayLabel.style.color = 'hsl(28, 10%, 53%)';
 
     columnContainer.appendChild(barDiv);
     columnContainer.appendChild(dayLabel)
@@ -141,6 +141,3 @@ function renderChart() {
         createBar(item, maxAmount, isCurrent);
     });
 }
-
-// TODO 7: Call renderChart() when page loads
-// Hint: You can call it here or use DOMContentLoaded event
