@@ -48,7 +48,7 @@ Users should be able to:
 ![Desktop View](design/desktop-design.jpg)
 
 ### Mobile View
-![Mobile View](./screenshots/mobile.png)
+![Mobile View](design/mobile-design.jpg)
 
 ## 🛠️ Technologies Used
 
@@ -73,7 +73,7 @@ Users should be able to:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/expenses-chart-component.git
+git clone https://github.com/Max-Mendes91/expenses-chart-component.git
 ```
 
 2. Navigate to the project directory:
