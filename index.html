@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Frontend Mentor | Expenses chart component</title>
+  <title>Expenses Chart Component</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +28,37 @@
     }
   </script>
   <style>
+    .bar {
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .bar:hover {
+      opacity: 0.7;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: hsl(25, 47%, 15%);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      white-space: nowrap;
+    }
+
+    .bar:hover .tooltip {
+      opacity: 1;
+    }
+
     .attribution {
       font-size: 11px;
       text-align: center;
@@ -37,51 +67,65 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
+
+    @media (max-width: 640px) {
+      .tooltip {
+        font-size: 12px;
+        padding: 4px 8px;
+      }
+    }
   </style>
 </head>
 
-<body class="bg-cream font-dm-sans min-h-screen flex items-center justify-center p-4">
+<body class="bg-cream font-dm-sans min-h-screen flex items-center justify-center p-4 sm:p-6">
   <div class="w-full max-w-lg">
     <!-- Balance Card -->
-    <div class="bg-soft-red rounded-xl p-6 mb-4 flex justify-between items-center" id="balance-card">
+    <div class="bg-soft-red rounded-lg sm:rounded-xl p-5 sm:p-6 mb-4 sm:mb-6 flex justify-between items-center">
       <div>
-        <p class="text-white text-sm mb-2">My balance</p>
-        <p class="text-white text-3xl font-bold" id="balance-amount">$921.48</p>
+        <p class="text-white text-xs sm:text-sm mb-1 sm:mb-2 opacity-90">My balance</p>
+        <p class="text-white text-2xl sm:text-3xl font-bold">$921.48</p>
       </div>
-      <img src="./images/logo.svg" alt="logo" class="w-16 h-10" id="balance-logo">
+      <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-dark-brown opacity-90 flex items-center justify-center">
+        <div class="flex gap-1">
+          <div class="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white"></div>
+          <div class="w-2 h-2 sm:w-3 sm:h-3 rounded-full border-2 border-white"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Chart Card -->
-    <div class="bg-white rounded-xl p-6" id="chart-card">
-      <h2 class="text-dark-brown text-2xl font-bold mb-12">Spending - Last 7 days</h2>
+    <div class="bg-white rounded-lg sm:rounded-xl p-5 sm:p-6 md:p-8">
+      <h2 class="text-dark-brown text-xl sm:text-2xl font-bold mb-8 sm:mb-12">Spending - Last 7 days</h2>
 
       <!-- Bar Chart -->
-      <div id="chart-container" class="flex items-end justify-between h-40 gap-2">
-        <!-- Bars will be generated dynamically -->
+      <div id="chart-container" class="flex items-end justify-between h-32 sm:h-40 md:h-44 gap-2 sm:gap-3 mb-6 sm:mb-8">
+        <!-- Bars generated dynamically -->
       </div>
 
-      <hr class="border-cream border-2 mb-6">
+      <hr class="border-cream border-2 mb-5 sm:mb-6">
 
       <!-- Total Section -->
-      <div class="flex justify-between items-end" id="totals-section">
+      <div class="flex justify-between items-end">
         <div>
-          <p class="text-medium-brown text-sm mb-1">Total this month</p>
-          <p class="text-dark-brown text-4xl font-bold" id="total-month">$478.33</p>
+          <p class="text-medium-brown text-xs sm:text-sm mb-1 sm:mb-2">Total this month</p>
+          <p class="text-dark-brown text-3xl sm:text-4xl md:text-5xl font-bold">$478.33</p>
         </div>
-        <div class="text-right" id="comparison-section">
-          <p class="text-dark-brown font-bold text-sm" id="percentage-change">+2.4%</p>
-          <p class="text-medium-brown text-sm">from last month</p>
+        <div class="text-right">
+          <p class="text-dark-brown font-bold text-sm sm:text-base">+2.4%</p>
+          <p class="text-medium-brown text-xs sm:text-sm">from last month</p>
         </div>
       </div>
     </div>
 
     <!-- Attribution -->
-    <div class="attribution mt-4" id="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Max Mendes</a>.
+    <div class="attribution mt-4 sm:mt-6 text-dark-brown">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        class="hover:underline">Frontend Mentor</a>.
+      Coded by <a href="#" class="hover:underline">Max Mendes</a>.
     </div>
   </div>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
+  
