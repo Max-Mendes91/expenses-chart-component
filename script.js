@@ -98,10 +98,10 @@ function createBar(dayData, maxAmount, isCurrent) {
     barDiv.style.backgroundColor = isCurrent ? 'hsl(186, 34%, 65%)' : 'hsl(10, 79%, 65%)'; // cyan : soft-red
 
     // Calculate height responsively based on viewport
-    const containerHeight = window.innerWidth < 640 ? 128 : window.innerWidth < 768 ? 160 : 176;
+    const containerHeight = chartContainer.offsetHeight || 160;
     const calcHeight = (dayData.amount / maxAmount) * containerHeight;
     barDiv.style.height = `${calcHeight}px`;
-    barDiv.style.minHeight = '20px'; 
+    barDiv.style.minHeight = '20px'
 
     // Add hover effect
     barDiv.addEventListener('mouseenter', () => {
