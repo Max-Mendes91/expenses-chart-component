@@ -6,7 +6,7 @@ A responsive, interactive expenses chart component that displays weekly spending
 
 ## 🚀 Demo
 
-View the live demo: [Add your live site URL here]
+View the live demo: https://max-mendes91.github.io/expenses-chart-component/
 
 ## 📋 Table of Contents
 
